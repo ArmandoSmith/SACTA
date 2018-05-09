@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title SACTA
+    
+    link(href='css/bootstrap.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')            
+    link(href='css/styles.css', rel='stylesheet')
+    link(href='css/stylesOld.css', rel='stylesheet')
+    link(href='css/animate.css', rel='stylesheet')
+  
+  body    
+    nav.navbar.nv.justify-content-between   
+             
+      a(href='login.html')
+        img(src="img/logo.svg", style="width:30px;")      
+        
+      div.circular--landscape
+        img(src="img/ava.png")
+        //- a.btn.btn-nav-enter.mr-2.my-sm-2(type='submit', href="iniciar_sesion.html") Entrar
+        //- a.btn.btn-nav-reg.mr-2.my-sm-2.btn-sm(type='submit', href="registro.html") Registrar
+   
+    .div
+      .row(style="margin-top:10rem; margin-bottom:3rem")
+        .col.d-flex.align-items-center.flex-column
+          a(href="login.html") 
+            img(src='img/voip.svg', style="width: 200px;")          
+          a.btn-link(href="#", style="text-decoration:none; margin-top: 2rem") VOIP          
+        .col.d-flex.align-items-center.flex-column
+          a(href="#") 
+            img(src='img/surv.svg', style="width: 200px")
+          a.btn-link(href="vigilancia.html" style="text-decoration:none; margin-top: 2rem") Vigilancia          
+        .col.d-flex.align-items-center.flex-column
+          a(href="#") 
+            img(src='img/voip.svg', style="width: 200px")
+          a.btn-link(href="#", style="text-decoration:none; margin-top: 2rem") Transferencia de archivos
+
+        
+    script(src='js/jquery-3.2.1.slim.min.js')
+    script(src='js/popper.min.js')    
+    script(src='js/bootstrap.js')

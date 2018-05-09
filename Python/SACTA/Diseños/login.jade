@@ -1,0 +1,31 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title SACTA
+    
+    link(href='css/bootstrap.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')            
+    link(href='css/styles.css', rel='stylesheet')
+    link(href='css/stylesOld.css', rel='stylesheet')
+    link(href='css/animate.css', rel='stylesheet')
+  
+  body    
+    div.d-flex.align-items-center.flex-column.login(style='width: 400px; margin: 0px auto; margin-top: 7rem;')
+      a(href="#", style="margin-bottom:1.5rem")
+         img(src='img/logo.svg', style="width:100px;")          
+      h3 Iniciar sesión 
+      
+      form.d-flex.flex-column(action="index.html")   
+        input.inp(placeholder="Usuario")          
+        input.inp(type="password",placeholder="Contraseña")
+        a.label-link.text-right(href="/password_reset", style="color: rgb(0, 44, 40); margin-top:0.25rem;")  Recuperar contraseña        
+        input.btn-enter(type="submit", value='Entrar')
+          
+    script(src='js/jquery-3.2.1.slim.min.js')
+    script(src='js/popper.min.js')    
+    script(src='js/bootstrap.js')
+
+      

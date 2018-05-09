@@ -1,0 +1,1088 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Cardistrict
+    // Bootstrap
+    link(href='css/bcss/bootstrap.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')
+    //-  link(href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700', rel='stylesheet')
+    link(src='css/bootstrap.css.map')
+    link(href='css/custom/styles.css', rel='stylesheet')    
+    link(href='css/animate.css', rel='stylesheet')    
+    link(href='css/simple-sidebar.css', rel='stylesheet') 
+   
+    
+  body
+    #nav-principal.container-fluid.bg-green.hsec1.secciones
+      nav.navbar.navbar-expand-lg.navbar-dark.container
+        a(href='#')
+          img.mr-3(src="img/iconos/logo.png", style="width: 40px; height:40px; background-color: white; padding: 0.3rem 0.3rem; border-radius: 0.5rem")
+        a.navbar-brand(href='#').titulo Cardistrict
+        form.form-inline.ml-auto
+          a.btn.btn-nav-enter.mr-2.my-sm-2(type='submit', href="iniciar_sesion.html") Entrar
+          a.btn.btn-nav-reg.mr-2.my-sm-2.btn-sm(type='submit', href="registro.html") Registrar
+    .secciones.container-fluid.bg-blanco1
+      .row.justify-content-center.align-items-center.hsec2
+        a#principal.btn.a-secciones.mr-3(href='index.html') Principal
+        a#enciclopedia.btn.a-secciones.mr-3(href='enciclopedia.html') Enciclopedia
+        a#galeria.btn.a-secciones.mr-3(href='galeria.html') Galeria        
+        a#guia.btn.a-secciones.mr-3(href='guia.html') Guia
+        a#historia.btn.a-secciones.mr-3(href='historia.html') Historia
+ 
+
+    //Categorias                                      .sticky-top2
+    #menu-enc.container-fluid.bg-azul.d-flex.align-items-center.animated.slideInDown
+      .container.d-flex.flex-column.align-items-center.justify-content-center.py-2
+        //h4 Categorias
+        #enc-navigation.col-7.d-flex.justify-content-center
+          a.btn.a-categorias.a-link(href='#grips',) Grips
+          a.btn.a-categorias.a-link(href='#spreads') Spreads
+          a.btn.a-categorias.a-link(href='#shuffles') Shuffles
+          a.btn.a-categorias.a-link(href='#isolations') Isolations
+          a.btn.a-categorias.a-link(href='#twirls', offset='100') Twirls
+          a.btn.a-categorias.a-link(href='#utilities') Utilities
+          a.btn.a-categorias.a-link(href='#one-handed-cuts') One-Handed Cuts
+          a.btn.a-categorias.a-link(href='#two-handed-cuts') Two-Handed Cut
+          a.btn.a-categorias.a-link(href='#one-handed-fans') One-Handed Fans
+          a.btn.a-categorias.a-link(href='#two-handed-fans') Two-Handed Fans        
+        .container.d-flex.justify-content-center.align-items-center
+          //- span.p1 Ordenar por
+          //- a#dropdown10.nav-link.dropdown-toggle.a-categorias(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Movimiento A-Z
+          //- .dropdown-menu.px-5(aria-labelledby='dropdown10')
+          //-   a.dropdown-item.text-azul(href='#') Creador A-Z
+          form.form-inline.pr-5
+            .input-group                     
+                input#buscarmov.form-control.input-nav.form-control-blanco(type='search', placeholder='Buscar movimiento', aria-label='Search')
+                span#buscar-icono.input-group-addon.fa.fa-search
+          button.btn.btn-contrib.pl-2(data-toggle='modal', data-target='#contribuirModal') Contribuir
+          p.ml-3(style="margin-bottom: 0px") 
+            a#volver-arriba.btn.a-categorias.ml-4(href="#nav-principal", style="font-size: 1.25rem;") Volver arriba
+              img.ml-2(src="img/iconos/top.png", alt="", style="height:20px; width: 20px; ")
+
+    //Pop-up Contribuir    
+    #contribuirModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+      .modal-dialog.modal-md(role='document')
+        #mod-content.modal-content
+          .modal-header
+            h5#exampleModalLabel.modal-title Contribuir
+            button.close.x-close(type='button', data-dismiss='modal', aria-label='Close') 
+              i.fa.fa-times(aria-hidden='true')              
+          .modal-body.px-4
+            p.text-justify Nos esforzamos mucho para tener una informacion confiable y completa de los movimientos. 
+              | Adyudanos a identificar nuevos movimientos a la enciclopedia, a corregir cualquier tipo de informacion o a reordenar movimientos. 
+              | Tambien danos tus comentarios para poder proveer una mejor enciclopedia para todos los Cardists!
+            .container.d-flex.justify-content-center.align-items-center.menuparent
+              span.p1 Tipo de ayuda
+              a.dropdown10.nav-link.dropdown-toggle.dd-contrib.selection.pl-3(href='http://example.com', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Identificar movimiento
+              .dropdown-menu.px-1(aria-labelledby='dropdown10')
+                a#cbf1.dropdown-item.dd-contrib(href='#') Identificar movimiento
+                a#cbf2.dropdown-item.dd-contrib(href='#') Corregir información
+                a#cbf3.dropdown-item.dd-contrib(href='#') Reordenación de movimiento
+                a#cbf4.dropdown-item.dd-contrib(href='#') Retroalimentación
+                                
+            form#f1.mt-3
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Nombre del movimiento')
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Link de video')
+              .form-group         
+                .input-group.minuto                
+                  input.form-control.text-center.num(type='text', placeholder='Minuto', aria-label='Username', maxlength="2" ) 
+                  //Al poner algo fuera del patron al hacer blur se queda en rojo pattern= "[0-9]*([0-9])"
+                  span#basic-addon1.input-group-addon :
+                  input.form-control.text-center.num(type='text', placeholder='Segundo', aria-label='Username')
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Comentario adicional')
+            //áéíóú
+            form#f2.mt-3(style="display:none;")
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Nombre del movimiento')              
+              .form-group                                
+                input#recipient-name.form-control(type='text', placeholder='¿Qué información corregir? (Ej: Creador, nombre de movimiento, prerequisitos...)')
+              .form-group                
+                textarea#recipient-name.form-control(type='text', placeholder='Justificación', rows="2" style="resize: none;")
+
+            form#f3.mt-3(style="display:none;")
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Nombre del movimiento') 
+              .form-group                
+                input#recipient-name.form-control(type='text', placeholder='Debería ir: antes o después de ... (Ej: Antes de Three Tile, Despues de Cobra cut)')
+              .form-group                         
+                textarea#recipient-name.form-control(type='text', placeholder='Justificación', rows="2" style="resize: none;")
+            
+            form#f4.mt-3(style="display:none;")
+              .form-group                
+                textarea#recipient-name.form-control(type='text', placeholder='Comentarios', rows="4" style="resize: none;")
+              
+
+                //- .form-group.row
+                //-   label.col-sm-2.col-form-label(for='staticEmail') Nombre
+                //-   .col-sm-10
+                //-     input#staticEmail.form-control(type='text', value='email@example.com')
+                //- .form-group.row
+                //-   label.col-sm-2.col-form-label(for='inputPassword') Link
+                //-   .col-sm-10
+                //-     input#inputPassword.form-control(placeholder='Link')
+                //- .form-group.row
+                //-   label.col-sm-2.col-form-label(for='inputPassword') Minuto
+                //-   .col-sm-10
+                //-     input#inputPassword.form-control(type='password', placeholder='Password')
+                   
+
+          .modal-footer
+            button.btn.btn-close(type='button', data-dismiss='modal') Cerrar
+            button.btn.btn-contrib-send(type='button') Enviar
+   
+    .container-fluid.bg-blanco1.con
+      #wrapper
+        #sidebar-wrapper.zi_-1
+          .container-fluid.informacion-movimiento.d-flex.flex-column.align-items-center.text-white.pb-5
+            .container-fluid.d-flex.justify-content-start
+              button.qui.x-close.close
+                .fa.fa-times            
+            .container
+              h6#movimiento-titulo(style="text-align:center; margin-bottom:0px") Movimiento            
+              //img#im(src="", alt="", style = "width: 250px; height:250; vertical-align: top;")                      
+              video#movimiento-video.my-3(src="", style="width:525px; height:295px; border-radius:0.3rem;",controls,loop,autoplay)                  
+              
+              .row
+                .col-4      
+                  h6 Creador
+                  h6.pl-3#movimiento-creador C
+                  h6.mt-3 Categoria
+                  a.pl-3#movimiento-categoria C
+                .col-8
+                  .row
+                    .col-6
+                    .col-6                  
+                
+        #page-content-wrapper.container-fluid
+          .container-fluid
+            .row.justify-content-center
+              span#grips.btn.enctitulos Grips
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button.btn.btn-mov.tog Dealers
+                    button#q.sb-toggle.btn.btn-mov.tog(href="#menu-toggle") Biddle
+                    button#w.sb-toggle.btn.btn-mov.tog(href="#menu-toggle") End
+                    button#e.btn.btn-mov.tog Straddle
+                    button.btn.btn-mov.tog Corner              
+                    button.btn.btn-mov.tog Z
+                    button.btn.btn-mov.tog Z Advanced
+                    button.btn.btn-mov.tog Reverse Z
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#spreads.btn.enctitulos Spreads
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button#table-spread.btn.btn-mov.tog Table Spread
+                    button#lepaul-spread.btn.btn-mov.tog LePaul Spread
+                    button#side-pressure.btn.btn-mov.tog Side pressure 
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#shuffles.btn.enctitulos Shuffles
+              .container.ct-enc.mt-4.bg-blanco2
+                .container                    
+                    button#overhand-shuffle.btn.btn-mov.tog Overhand Shuffle
+                    button#hindu-shuffle.btn.btn-mov.tog Hindu Shuffle                  
+                    button#riffle-shuffle.btn.btn-mov.tog Riffle shuffle
+                    button#faro-shuffle.btn.btn-mov.tog Faro Shuffle
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#isolations.btn.enctitulos Isolations
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    
+                    button#palm-shift.btn.btn-mov.tog Palm Shift
+                    button#rotation.btn.btn-mov.tog Rotation
+                    button#nestlo.btn.btn-mov.tog Nestlo
+                    button#inso.btn.btn-mov.tog Inso
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#twirls.btn.enctitulos Twirls
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button#flicker.btn.btn-mov.tog Flicker
+                    button#forty5.btn.btn-mov.tog 5forty
+                    button#dotnq.btn.btn-mov.tog DOTNQ
+                    button#flac.btn.btn-mov.tog Flac
+                    button#bullet.btn.btn-mov.tog Bullet
+                    button#sphiral.btn.btn-mov.tog Sphiral
+                    button#threesome.btn.btn-mov.tog Threesome 
+                    button#flutter.btn.btn-mov.tog Flutter 
+                    button#bumblebee.btn.btn-mov.tog Bumblebee 
+                    button#dreidel.btn.btn-mov.tog Dreidel
+                    button#komori.btn.btn-mov.tog Komori
+                    button#blue-phoenix.btn.btn-mov.tog Blue Phoenix
+                    button#get-learnded.btn.btn-mov.tog Get learnded
+                    button#rosemary.btn.btn-mov.tog Rosemary
+                    button#omega.btn.btn-mov.tog Omega
+                    button#two-cards-twirl.btn.btn-mov.tog Two Cards Twirl
+                    button#two-nie.btn.btn-mov.tog Two nie
+                    button#tasrine-spin.btn.btn-mov.tog Tasrine Spin  
+                    button#barrage.btn.btn-mov.tog Barrage
+                    button#cherry-blossom.btn.btn-mov.tog Cherry blossom
+                    button#ultima.btn.btn-mov.tog Ultima
+                    button#tourniquet.btn.btn-mov.tog Tourniquet 
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#utilities.btn.enctitulos Utilities
+              .container.ct-enc.mt-4.bg-blanco2
+                .container                    
+                    button#deck-flip.btn.btn-mov.tog Deck flip
+                    button#packet-spin-various.btn.btn-mov.tog Packet Spins
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#one-handed-cuts.btn.enctitulos One-Handed Cuts
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button#charlier.btn.btn-mov.tog.tog Charier
+                    button#revolution.btn.btn-mov.tog.tog Revolution
+                    button#revolution2.btn.btn-mov.tog.tog Revolution 2
+                    button#knucle-cut.btn.btn-mov.tog.tog Knucle Cut
+                    button#index-cut.btn.btn-mov.tog.tog Index Cut              
+                    button#shear-cut.btn.btn-mov.tog.tog Shear Cut
+                    button#scissor-cut.btn.btn-mov.tog.tog Scissor Cut
+                    button#handfull.btn.btn-mov.tog.tog Hand Full
+                    button#chaser.btn.btn-mov.tog.tog Chaser
+                    button#tytus.btn.btn-mov.tog.tog Tytus                                        
+                    button#kryptonite.btn.btn-mov.tog.tog Kryptonite
+                    button#muse.btn.btn-mov.tog.tog Muse
+                    button#judo-flip.btn.btn-mov.tog.tog Judo Flip                    
+                    button#l-cut.btn.btn-mov.tog.tog L-Cuts
+                    button#waves.btn.btn-mov.tog.tog Waves
+                    button#mantra.btn.btn-mov.tog.tog Mantra
+                    button#cobra-cut.btn.btn-mov.tog.tog Cobra Cut
+                    button#kyber.btn.btn-mov.tog.tog Kyber
+                    
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#two-handed-cuts.btn.enctitulos Two-Handed Cuts
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    
+                    button#kfc.btn.btn-mov.tog KFC
+                    button#crystal.btn.btn-mov.tog Crystal
+                    button#zoey.btn.btn-mov.tog Zoey                               
+                    button#transfix.btn.btn-mov.tog Transfix
+                    button#sybil-947.btn.btn-mov.tog Sybil 947
+                    button#sybil.btn.btn-mov.tog Sybil
+                    button#spin-sybil.btn.btn-mov.tog Spin Sybil
+                    button#fulsomfan.btn.btn-mov.tog Fulsomfan
+                    button#leno-cut.btn.btn-mov.tog Leno cut
+                    button#gingerbread-man.btn.btn-mov.tog Gingerbread man
+                    button#three-tile.btn.btn-mov.tog Three Tile                    
+                    button#black-mamba.btn.btn-mov.tog Black Mamba                    
+                    button#zigzagoon.btn.btn-mov.tog Zigzagoon                    
+                    button#squoze.btn.btn-mov.tog Squoze
+                    button#plumelle.btn.btn-mov.tog Plumelle                    
+                    button#squeeze.btn.btn-mov.tog Squeeze
+                    button#vine.btn.btn-mov.tog Vine
+                    button#mocking-brid.btn.btn-mov.tog Mocking bird
+                    button#fresco.btn.btn-mov.tog Fresco
+                    button#pandora.btn.btn-mov.tog Pandora
+
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#one-handed-fans.btn.enctitulos One-Handed Fans
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button#smear.btn.btn-mov.tog Smear
+                    button#carnahan.btn.btn-mov.tog Carnahan
+                    button#circular.btn.btn-mov.tog Circular
+                    button#spootnik.btn.btn-mov.tog Spootnik
+                    button#split-suicide.btn.btn-mov.tog Split Suicide              
+                    button#flower-faro.btn.btn-mov.tog Flower (Faro)
+                    button#flip-back.btn.btn-mov.tog Flip Back
+                    button#triangle-wu-tang.btn.btn-mov.tog Triangle Wu Tang
+          .container-fluid.encmarg
+            .row.justify-content-center
+              span#two-handed-fans.btn.enctitulos Two-Handed Fans
+              .container.ct-enc.mt-4.bg-blanco2
+                .container
+                    button#thumb-fan.btn.btn-mov.tog Thumb Fan
+                    button#pressure-fan.btn.btn-mov.tog Pressure Fan
+                    button#flower-fan.btn.btn-mov.tog Flower Fan
+                    button#giant-fan.btn.btn-mov.tog Giant Fan
+                    button#bloom.btn.btn-mov.tog Bloom 
+                    button#bloom-2.btn.btn-mov.tog Bloom 2                    
+
+    // footer
+    .container-fluid.bg-verdelight.d-flex.flex-column.align-items-center.justify-content-center.py-3.text-white.footer          
+      h4.text-center(href="") Contacto
+      //a.btn.btn-footer.text-center(href="") Contacto
+      .display-4.text-center
+        a.btn.btn-footer.fa.fa-facebook-official(aria-hidden='true', href="#")   
+
+
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+    script(src='js/jquery-3.2.1.js')
+    script(src='js/stickyjs.js')
+    script(src='js/sticky.js')
+    script(src='js/popper.min.js')    
+    // Include all compiled plugins (below), or include individual files as needed
+    script(src='js/bootstrap.js')
+    script(src='js/custom/scripts.js')
+    script(src='js/scroll/jquery.scrollTo.js')
+    script(src='js/scroll/jquery.localScroll.js')
+    script(src='js/scroll/init.js')
+
+    // Include all compiled plugins (below), or include individual files as needed
+    
+    script(src='js/sticky-kit.js') 
+    script(src='js/scroll/init.js') 
+
+    script.
+      
+      $("#menu-enc").on("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd",
+      function(e){
+          $("#menu-enc").addClass("sticky-top1");
+          $(this).off(e); //ou can also use off() method on the callback function to ensure it will be fired only once.
+      });
+
+      (function() {     
+         
+          var txt1 = "<li><a>Shortcuts</a></li>";
+          
+          $('.a-categorias').click(function(e) {
+            
+            if(e.target.id == 'volver-arriba'){
+            }
+            else{
+              e.preventDefault();
+              $('html,body').animate({
+                scrollTop: $(this.hash).offset().top -125
+              }, 2000 );
+            }
+          });
+          
+          //Animacion del menu
+          $('.a-secciones').click(function(e) { 
+            e.preventDefault();
+             var href = this.href;
+             if(e.target.id == 'enciclopedia')
+            {
+                console.log('ewefe')
+            }
+            else{
+              
+              $("#menu-enc").removeClass("sticky-top1");                   
+              $("#menu-enc").removeClass("animated slideInDown");                   
+              $("#menu-enc").addClass("animated slideOutUp");                 
+              setTimeout(function(){
+              window.location = href;
+              }, 500);
+            }
+           
+            }); 
+          //Animacion del menu--
+
+          $('.tog').click(function(e) {    
+
+              //Spreads                    
+              if (e.target.id == "table-spread")
+              {
+                  //$("#wrapper").removeClass("toggled");  
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Table spread");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/spreads/table-spread.mp4");   
+              }
+
+              if (e.target.id == "lepaul-spread")
+              {
+                    
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Le Paul spread");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/mantra.mp4");
+              }    
+
+              if (e.target.id == "side-pressure")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Side pressure");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                       
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/l-cut.mp4");
+              }   
+
+              //One-handed Cuts
+              if (e.target.id == "charlier")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Charlier");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/charlier.mp4");
+              } 
+
+              if (e.target.id == "revolution")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Revolution");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Brian Tudor");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/revolution.mp4");
+              } 
+
+              if (e.target.id == "revolution2")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("L-Cuts");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/revolution2.mp4");
+              } 
+
+              if (e.target.id == "knucle-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Knucle cut");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/knucle-cut.mp4");
+              }  
+
+              if (e.target.id == "index-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Index cut");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/index-cut.mp4");
+              } 
+
+              if (e.target.id == "shear-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Shear cut");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/shear-cut.mp4");
+              } 
+
+              if (e.target.id == "scissor-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Scissor cut");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/");
+              } 
+
+              if (e.target.id == "handfull")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Handfull");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Jedrick Prudent");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts//handfull.mp4");
+              } 
+
+              if (e.target.id == "chaser")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Chaser");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Dimitri Arleri");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/chaser.mp4");
+              } 
+
+              if (e.target.id == "tytus")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Tytus");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Vaibhav Dange");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/tytus.mp4");
+              } 
+
+              if (e.target.id == "muse")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Muse");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Henrik Forberg");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/muse-cut.mp4");
+              } 
+
+              if (e.target.id == "judo-flip")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Judo flip");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Franco Pascali");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/judo-flip.mp4");
+              } 
+
+              if (e.target.id == "l-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("L-Cuts");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/l-cut.mp4");
+              } 
+
+              if (e.target.id == "waves")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Waves");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/waves.mp4");
+              } 
+
+              if (e.target.id == "mantra")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Mantra");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Tobias Levin");                                
+                  $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+                  $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/mantra.mp4");
+              } 
+
+              //Isolations
+
+              if (e.target.id == "palm-shift")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Palm shift");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/");
+              } 
+
+              if (e.target.id == "rotation")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "nestlo")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "inso")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              //Twirls
+
+              if (e.target.id == "flicker")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "forty5")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "dotnq")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "flac")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "bullet")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/twirls");
+              } 
+
+              if (e.target.id == "sphiral")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vi");
+              } 
+
+              if (e.target.id == "threesome")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "flutter")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "bumblebee")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "dreidel")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "komori")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "blue-phoenix")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "get-learnded")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "rosemary")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Rosemary");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Andrei Levin");                                                  
+                  $( ".informacion-movimiento #movimiento-categoria " ).html("Twirl");  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/twirls/rosemary.mp4");
+              } 
+
+              if (e.target.id == "omega")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Omega");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/twirls/omega.mp4");
+              } 
+
+              if (e.target.id == "two-cards-twirl")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Two Cards Twirl");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/twirls/two-card-twirl.mp4");
+              } 
+
+              if (e.target.id == "two-nie")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "tasrine")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "barrage")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Barrage");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Jedrick Prudente");                                                  
+                  $( ".informacion-movimiento #movimiento-categoria " ).html("Twirl");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/twirls/barrage.mp4");
+              } 
+
+              if (e.target.id == "cherry-blossom")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "ultima")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "tourniquet")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              //Utilities
+
+              if (e.target.id == "deck-flip")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "packet-spin-various")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              //two-handed cut
+
+              if (e.target.id == "kfc")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("KFC");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Kevin Ho");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/kfc.mp4");
+              } 
+
+              if (e.target.id == "crystal")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Crystal");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/crystal.mp4");
+              } 
+
+              if (e.target.id == "zoey")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Zoey");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/zoey.mp4");
+              } 
+
+              if (e.target.id == "transfix")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Transfix");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/transfix.mp4");
+              } 
+
+              if (e.target.id == "sybil-947")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Sybil 947");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Kevin Ho");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/sybil-947.mp4");
+              } 
+
+              if (e.target.id == "plumelle")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Plumelle");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Dimitri Arleri");                                                  
+                  $( ".informacion-movimiento #movimiento-categoria " ).html("Two handed cut");   
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/plumelle.mp4");
+              } 
+
+              if (e.target.id == "spin-sybil")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Spin-sybil");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/spin-sybil.mp4");
+              } 
+              
+              if (e.target.id == "fulsomfan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Fulsomfan");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/fulsomfan.mp4");
+              } 
+
+              if (e.target.id == "leno-cut")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Lenu cut");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "");
+              } 
+
+              if (e.target.id == "gingerbread-man")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "three-tile")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Three tile");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/three-tile.mp4");
+              } 
+
+              if (e.target.id == "black-mamba")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Black mamba");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("Kevin Ho");                                                  
+                  $( ".informacion-movimiento #movimiento-categoria " ).html("Two handed cut");   
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/black-mamba.mp4");
+              } 
+
+              if (e.target.id == "zigzagoon")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "squoze")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Squoze");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/squoze.mp4");
+              } 
+
+              if (e.target.id == "squeeze")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+              
+              if (e.target.id == "vine")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Vine");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/vine.mp4");
+              } 
+
+              if (e.target.id == "mocking-brid")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Mocking bird");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/mocking-bird.mp4");
+              } 
+
+              if (e.target.id == "fresco")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "pandora")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("Pandora");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/two-handed-cuts/pandora.mp4");
+              } 
+
+              //One handed fans
+
+              if (e.target.id == "smear")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+
+              if (e.target.id == "carnahan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "circular")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "spootnik")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "split-suicide")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "flower-faro")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "flip-back")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "triangle-wu-tang")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              //Two-handed-fans
+
+              if (e.target.id == "thumb-fan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "pressure-fan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "flower-fan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "giant-fan")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "bloom")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "bloom-2")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+              if (e.target.id == "")
+              {
+                  $( ".informacion-movimiento #movimiento-titulo " ).html("");
+                  $( ".informacion-movimiento #movimiento-creador " ).html("-");                                                  
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "vid");
+              } 
+
+
+
+              //- if (e.target.id == "")
+              //- {
+              //-     $( ".informacion-movimiento #movimiento-titulo " ).html("");
+              //-     $( ".informacion-movimiento #movimiento-creador " ).html("Desconocido");                                
+              //-     $( ".informacion-movimiento #movimiento-prerequisitos " ).html("-");                                
+              //-     $( ".informacion-movimiento #movimiento-variaciones " ).html("-");                                    
+              //-     $( ".informacion-movimiento #movimiento-video ").attr("src", "vid/one-handed-cuts/");
+              //- } 
+
+
+
+              $("#wrapper").addClass("toggled");                  
+              
+              $(window).scrollTop($(window).scrollTop()+1);
+              $(window).scrollTop($(window).scrollTop()-1);
+              werf = e.target.id;               
+          });
+
+          $('.qui').click(function(e) { 
+              $("#wrapper").removeClass("toggled");     
+              $(window).scrollTop($(window).scrollTop()+1);
+              $(window).scrollTop($(window).scrollTop()-1);
+              setTimeout(function(){
+                  $( ".informacion-movimiento #movimiento-video ").attr("src", "");   
+              }, 500);
+              werf = e.target.id; 
+              console.log(werf);  
+              
+          }); 
+
+          attach();
+
+          function attach() {        
+          $("#sidebar-wrapper").stick_in_parent({parent: $(".con"),recalc_every: 1,offset_top: $('#menu-enc').outerHeight()}) 
+             .on('sticky_kit:stick', function(e) {                
+                console.log('stick');
+            })
+            .on('sticky_kit:unbottom', function(e) {
+              console.log('unbottom');
+              
+            })
+
+          ;}
+    
+        $("#events_container").on("sticky_kit:stick", function(e) {
+          $(e.target).html("got stick event");
+        });
+    
+        $("#events_container").on("sticky_kit:unstick", function(e) {
+          $(e.target).html("got unstick event");
+        });
+    
+        $("#events_container").on("sticky_kit:bottom", function(e) {
+          $(e.target).html("got bottom event");
+        });
+    
+        $("#events_container").on("sticky_kit:unbottom", function(e) {
+          $(e.target).html("got unbottom event");
+        });
+      })();
+    
+
+    
+

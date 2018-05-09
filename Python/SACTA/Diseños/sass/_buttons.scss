@@ -1,0 +1,55 @@
+.btn-link{
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border-color: transparent;
+    border-style: solid;       
+    transition: all 0.5s ease;
+    animation-duration: 0.5s;
+    padding: 0.5rem 0.5rem;
+    color: black;
+}
+
+.btn-link:hover{
+          
+    background-color: $verde; 
+    color: antiquewhite;    
+}
+
+.btn-enter{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    background-color: $verde;    
+    border-radius: 0.5rem;
+    border-color: transparent;
+    border-style: solid;      
+    transition: all 0.5s ease;
+    animation-duration: 0.5s;
+    padding: 0.5rem 0.5rem;
+    color: white;
+}
+
+.btn-enter:hover{    
+    background-color: $verde-hover;      
+}
+
+.inp{
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border-color: $verde;
+    border-style: solid;  
+    padding: 0.5rem 0.5rem;
+}
+
+a.x-close{
+    color: white;
+    transition:0.3s;
+    position:absolute;     
+    right: 1rem;    
+    font-size:2rem;
+    
+    &:hover{
+        color: red;
+    }
+
+}

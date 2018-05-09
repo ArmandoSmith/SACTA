@@ -1,0 +1,181 @@
+.nv {
+  border-bottom: 2px solid #006661; }
+
+.login {
+  border-radius: 0.5rem;
+  border-color: #006661;
+  border-style: solid;
+  padding: 2rem 2rem; }
+
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.av {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  margin-left: -37.5%;
+  width: auto; }
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; }
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  right: 0px;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1; }
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block; }
+
+.dropdown-content a {
+  color: black;
+  padding: 1rem 2.25rem;
+  text-decoration: none;
+  display: block;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  .dropdown-content a:hover {
+    background-color: #919191; }
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%; }
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+  margin-left: -37.5%; }
+
+.side-nav {
+  height: 100vh;
+  position: absolute;
+  width: 350px;
+  z-index: 1;
+  top: 58px;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  -webkit-transition: 0.75s;
+  -o-transition: 0.75s;
+  transition: 0.75s;
+  border-right: 2px solid #006661; }
+
+.nav-tabs li a {
+  color: black;
+  border-radius: 5px;
+  margin: 0rem 0.5rem;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+.nav-tabs li a:hover {
+  background-color: #006661;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid black;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+.nav-tabs li a:active {
+  background-color: #001816; }
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: black; }
+
+.nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.show .nav-link:hover {
+  color: #006661;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+#main {
+  margin-left: 350px;
+  padding: 20px;
+  overflow: hidden;
+  height: 100vh; }
+
+@media (max-width: 568px) {
+  .navbar-nav {
+    display: none; } }
+
+@media (min-width: 568px) {
+  /*.open-slide{display:none}*/ }
+
+.btn-link {
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  border-style: solid;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  padding: 0.5rem 0.5rem;
+  color: black; }
+
+.btn-link:hover {
+  background-color: #006661;
+  color: antiquewhite; }
+
+.btn-enter {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  background-color: #006661;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  border-style: solid;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  padding: 0.5rem 0.5rem;
+  color: white; }
+
+.btn-enter:hover {
+  background-color: #001816; }
+
+.inp {
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border-color: #006661;
+  border-style: solid;
+  padding: 0.5rem 0.5rem; }
+
+a.x-close {
+  color: white;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  position: absolute;
+  right: 1rem;
+  font-size: 2rem; }
+  a.x-close:hover {
+    color: red; }
