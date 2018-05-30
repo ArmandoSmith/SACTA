@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SACTA</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/stylesOld.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+  </head>
+  <body>   
+    <div class="d-flex align-items-center flex-column login" style="width: 750px; margin: 0px auto; margin-top: 4rem; padding:1rem"><a href="login.html" style="margin-bottom:1.5rem"><img src="img/logo.svg" style="width:50px;"></a>
+      <form action="login.html">
+        <div class="d-flex flex-column align-items-center">
+          <div class="d-flex justify-content-center"> 
+            <div class="text-center d-flex flex-column" style="width:300px;"> 
+              <input class="inp" placeholder="Nombre de usuario">
+              <input class="inp" placeholder="Contraseña">
+              <input class="inp" placeholder="Nombre">
+              <input class="inp" placeholder="Apellido materno">
+              <input class="inp" placeholder="Apellido paterno">
+              <input class="inp" placeholder="RFC">
+            </div>
+            <div class="text-center d-flex flex-column" style="width:300px;margin-left:3rem;"> 
+              <input class="inp" placeholder="Direccion de domicilio">
+              <input class="inp" placeholder="Celular">
+              <input class="inp" placeholder="Correo">
+              <label class="text-left" style="margin-top:1rem">Sexo</label>
+              <div class="d-flex flex-column" style="padding:0rem 5rem">
+                <div class="custom-control custom-radio" style="width:100px">
+                  <input class="custom-control-input" id="customRadio1" type="radio" name="customRadio">
+                  <label class="custom-control-label" for="customRadio1">Femenino</label>
+                </div>
+                <div class="custom-control custom-radio" style="width:100px">
+                  <input class="custom-control-input" id="customRadio2" type="radio" name="customRadio">
+                  <label class="custom-control-label" for="customRadio2">Masculino</label>
+                </div>
+              </div>
+              <label class="text-left" style="margin-top:1rem">Fecha de nacimiento</label>
+              <input type="date" name="bday">
+            </div>
+          </div>
+          <input class="btn-enter text-center" type="submit" value="Registrarse" style="width:300px;margin-top:2rem">
+        </div>
+      </form>
+    </div>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/popper.min.js">   </script>
+    <script src="js/bootstrap.js"></script>
+  </body>
+</html>

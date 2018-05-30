@@ -1,0 +1,52 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title SACTA
+    
+    link(href='css/bootstrap.css', rel='stylesheet')
+    link(href='css/font-awesome.min.css', rel='stylesheet')            
+    link(href='css/styles.css', rel='stylesheet')
+    link(href='css/stylesOld.css', rel='stylesheet')
+    link(href='css/animate.css', rel='stylesheet')
+  
+  body    
+    .d-flex.align-items-center.flex-column.login(style='width: 750px; margin: 0px auto; margin-top: 4rem; padding:1rem')
+      a(href="login.html", style="margin-bottom:1.5rem")
+         img(src='img/logo.svg', style="width:50px;")                      
+      form(action="login.html")
+        .d-flex.flex-column.align-items-center
+            .d-flex.justify-content-center  
+                .text-center.d-flex.flex-column(style="width:300px;") 
+                    input.inp(placeholder="Nombre de usuario")          
+                    input.inp(placeholder="Contraseña")
+                    input.inp(placeholder="Nombre")
+                    input.inp(placeholder="Apellido materno")
+                    input.inp(placeholder="Apellido paterno")
+                    input.inp(placeholder="RFC")
+                .text-center.d-flex.flex-column(style="width:300px;margin-left:3rem;") 
+                    
+                    input.inp(placeholder="Direccion de domicilio")
+                    input.inp(placeholder="Celular")
+                    input.inp(placeholder="Correo")      
+                    label.text-left(style="margin-top:1rem") Sexo
+                    .d-flex.flex-column(style="padding:0rem 5rem")
+                        .custom-control.custom-radio(style="width:100px")
+                            input#customRadio1.custom-control-input(type='radio', name='customRadio')
+                            label.custom-control-label(for='customRadio1') Femenino
+                        .custom-control.custom-radio(style="width:100px")
+                            input#customRadio2.custom-control-input(type='radio', name='customRadio')
+                            label.custom-control-label(for='customRadio2') Masculino
+                    label.text-left(style="margin-top:1rem") Fecha de nacimiento
+                    input(type='date', name='bday')
+
+            input.btn-enter.text-center(type="submit", value='Registrarse', style="width:300px;margin-top:2rem")
+        
+          
+    script(src='js/jquery-3.2.1.slim.min.js')
+    script(src='js/popper.min.js')    
+    script(src='js/bootstrap.js')
+
+      

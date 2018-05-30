@@ -13,7 +13,7 @@ html(lang='en')
     link(href='css/animate.css', rel='stylesheet')
   
   body    
-    div.d-flex.align-items-center.flex-column.login(style='width: 400px; margin: 0px auto; margin-top: 7rem;')
+    .d-flex.align-items-center.flex-column.login(style='width: 400px; margin: 0px auto; margin-top: 4rem;')
       a(href="#", style="margin-bottom:1.5rem")
          img(src='img/logo.svg', style="width:100px;")          
       h3 Iniciar sesión 
@@ -21,8 +21,12 @@ html(lang='en')
       form.d-flex.flex-column(action="index.html")   
         input.inp(placeholder="Usuario")          
         input.inp(type="password",placeholder="Contraseña")
-        a.label-link.text-right(href="/password_reset", style="color: rgb(0, 44, 40); margin-top:0.25rem;")  Recuperar contraseña        
+        //- a.label-link.text-right(href="/password_reset", style="color: rgb(0, 44, 40); margin-top:0.25rem;")  Recuperar contraseña        
         input.btn-enter(type="submit", value='Entrar')
+    
+    .d-flex.align-items-center.flex-column.login(style='width: 400px; margin: 0px auto; margin-top: 1rem; padding:0.5rem;')                  
+      a.label-link.text-right(href="registrarse.html", style="color: rgb(0, 44, 40);")  Registrarse    
+        
           
     script(src='js/jquery-3.2.1.slim.min.js')
     script(src='js/popper.min.js')    
