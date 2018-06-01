@@ -1,29 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SACTA</title>
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/stylesOld.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-  </head>
-  <body>   
-    <nav class="navbar nv justify-content-between">  <a href="login.html"><img src="img/logo.svg" style="width:30px;"></a>
-      <div class="circular--landscape"><img src="img/ava.png"></div>
+{% extends "base.html" %}
+{% block title %}index{% endblock %}
+{% load staticfiles %}
+{% block body %}
+    <nav class="navbar nv justify-content-between">
+      <a href="/index/">
+        <img src="{% static 'img/logo.svg' %}" style="width:30px;">
+      </a>
+      <div class="circular--landscape">
+        <img src="{% static 'img/ava.png' %}">
+      </div>
     </nav>
     <div class="div">
       <div class="row" style="margin-top:10rem; margin-bottom:3rem">
-        <div class="col d-flex align-items-center flex-column"><a href="login.html"> <img src="img/voip.svg" style="width: 200px;"></a><a class="btn-link" href="#" style="text-decoration:none; margin-top: 2rem">VOIP          </a></div>
-        <div class="col d-flex align-items-center flex-column"><a href="#"> <img src="img/surv.svg" style="width: 200px"></a><a class="btn-link" href="vigilancia.html" style="text-decoration:none; margin-top: 2rem">Vigilancia          </a></div>
-        <div class="col d-flex align-items-center flex-column"><a href="#"> <img src="img/ftp.svg" style="width: 200px"></a><a class="btn-link" href="#" style="text-decoration:none; margin-top: 2rem">Transferencia de archivos</a></div>
+        <div class="col d-flex align-items-center flex-column">
+          <a href="">
+            <img src="{% static 'img/voip.svg' %}" style="width: 200px;">
+          </a>
+          <a class="btn-link" href="#" style="text-decoration:none; margin-top: 2rem">VOIP</a>
+        </div>
+        <div class="col d-flex align-items-center flex-column">
+          <a href="/vigilancia/">
+            <img src="{% static 'img/surv.svg' %}" style="width: 200px">
+          </a>
+          <a class="btn-link" href="" style="text-decoration:none; margin-top: 2rem">Vigilancia</a>
+        </div>
+        <div class="col d-flex align-items-center flex-column"><a href="#">
+          <img src="{% static 'img/ftp.svg' %}" style="width: 200px">
+        </a>
+          <a class="btn-link" href="#" style="text-decoration:none; margin-top: 2rem">Transferencia de archivos</a>
+        </div>
       </div>
     </div>
-    <script src="js/jquery-3.2.1.slim.min.js"></script>
-    <script src="js/popper.min.js">   </script>
-    <script src="js/bootstrap.js"></script>
-  </body>
-</html>
+{% endblock %}
