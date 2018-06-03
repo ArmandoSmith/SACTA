@@ -2,20 +2,98 @@
 {% block title %}vigilancia{% endblock %}
 {% load staticfiles %}
 {% block body %}
-    <nav class="navbar nv justify-content-between">
-      <a href="/index/">
-        <img src="{% static 'img/logo.svg' %}" style="width:30px;">
-      </a>
-      <div class="dropdown" style="height:40px">
-        <div class="circular--landscape dropdown-toggle dropbtn" type="button" data-toggle="dropdown" onclick="myFunction()">
-          <img src="{% static 'img/ava.png' %}">
-        </div>
-        <div class="dropdown-content" id="myDropdown">
-          <label href="#" style="padding: 1rem 1rem">angel.rubio@gmail.com</label>
-          <a href="/logout/">Cerrar sesión</a>
+    <nav class="navbar nv justify-content-between"><a href="login.html"><img src="img/logo.svg" style="width:30px;"></a>
+      <div class="d-flex align-items-center">
+        <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-departamento">Departamento              <i class="fas fa-plus-circle"></i></button>
+        <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-camara">Camara  <span class="fas fa-plus-circle"></span></button>
+        <div class="dropdown" style="height:40px">     
+          <div class="circular--landscape dropdown-toggle dropbtn" type="button" data-toggle="dropdown" onclick="myFunction()"><img src="img/ava.png"></div>
+          <div class="dropdown-content" id="myDropdown">
+            <label href="#" style="padding: 1rem 1rem">angel.rubio@gmail.com</label><a href="#">Cerrar sesión          </a>
+          </div>
         </div>
       </div>
     </nav>
+    <!--Pop-Up Departamento-->
+    <div class="modal fade" id="pop-departamento" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content" id="mod-content">
+          <form>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar departamento </h5>
+              <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close"> <i class="fa fa-times" aria-hidden="true">             </i></button>
+            </div>
+            <div class="modal-body px-4">
+              <p class="text-justify">Selecciona el departamento a agregar
+                <div class="form-group">                                 
+                  <select class="form-control" id="departamento">
+                    <option>Sistemas</option>
+                    <option>RH</option>
+                    <option>Luzelenita</option>
+                    <option>Erasmiamor</option>
+                    <option>Papiniaga</option>
+                  </select>
+                </div>
+              </p>
+              <div class="d-flex justify-content-end" style="margin:1rem 0px">
+                <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
+                <button class="btn btn-contrib-send" type="button">Enviar  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Pop-Up Camaras-->
+    <div class="modal fade" id="pop-camara" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content" id="mod-content">
+          <form>
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Agregar camara </h5>
+              <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close"> <i class="fa fa-times" aria-hidden="true">             </i></button>
+            </div>
+            <div class="modal-body px-4">
+              <p class="text-justify">Llene el siguiente formulario para agregar una camara              
+                <div class="form-group">      
+                  <label for="#id-usuario">ID de Usuario        </label>
+                  <select class="form-control" id="id-usuario"> 
+                    <option>E3 2018</option>
+                    <option>Rocket League</option>
+                    <option>Battlefield V</option>
+                    <option>Dishonored</option>
+                    <option>Darksiders</option>
+                  </select>
+                  <div class="form-group">              </div>
+                  <label for="#id-departamento">ID de departamento</label>
+                  <select class="form-control" id="id-departamento">
+                    <option>E3 2018</option>
+                    <option>Rocket League</option>
+                    <option>Battlefield V</option>
+                    <option>Dishonored</option>
+                    <option>Darksiders</option>
+                  </select>
+                  <div class="form-group">   </div>
+                  <label for="#puerto">Puerto</label>
+                  <select class="form-control" id="puerto">
+                    <option>E3 2018</option>
+                    <option>Rocket League</option>
+                    <option>Battlefield V</option>
+                    <option>Dishonored</option>
+                    <option>Darksiders</option>
+                  </select>
+                </div>
+              </p>
+              <div class="d-flex justify-content-end" style="margin:1rem 0px">
+                <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
+                <button class="btn btn-contrib-send" type="button">Enviar  </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
     <div class="side-nav d-flex flex-column" id="side-menu">
       <!--De stackoverflow-->
       <!-- Tabs BS-->
