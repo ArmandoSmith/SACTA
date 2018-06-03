@@ -127,6 +127,42 @@
 @media (min-width: 568px) {
   /*.open-slide{display:none}*/ }
 
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #006661;
+  outline: none;
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(25, 38, 226, 0.25);
+  box-shadow: 0 0 0 0.15rem #006661; }
+
+.form-control-blanco:focus {
+  color: #495057;
+  background-color: #fff;
+  border-style: solid;
+  border-color: white;
+  -webkit-box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 0.15rem white; }
+
+.form-control-blanco:blur {
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.box-shadow-blanco {
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 0 0.15rem white;
+  box-shadow: 0 0 0 0.15rem white;
+  -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
+  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s; }
+
+.modal-content {
+  border: 0px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.7rem; }
+
 .btn-link {
   font-size: 1.5rem;
   border-radius: 0.5rem;
@@ -143,6 +179,24 @@
 .btn-link:hover {
   background-color: #006661;
   color: antiquewhite; }
+
+.btn-nav {
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  background-color: transparent;
+  border-style: solid;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  padding: 0.25rem 0.5rem;
+  color: black; }
+  .btn-nav:hover {
+    background-color: #006661;
+    color: antiquewhite;
+    cursor: pointer; }
 
 .btn-enter {
   margin-top: 1rem;
@@ -181,58 +235,65 @@ a.x-close {
   a.x-close:hover {
     color: red; }
 
-/* The radio-btn */
-.radio-btn {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+.btn-contrib {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+  border-radius: 0.4rem;
+  padding: 0.25rem;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 200px; }
+  .btn-contrib:hover {
+    color: #46C9CC;
+    background-color: white;
+    border-radius: 0.4rem;
+    font-weight: 500; }
 
-/* Hide the browser's default radio button */
-.radio-btn input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer; }
+.x-close {
+  color: #666666;
+  background-color: transparent;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  padding: 0rem; }
+  .x-close:hover {
+    color: #c20000; }
 
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 50%; }
+.btn-close {
+  color: black;
+  background-color: white;
+  border-radius: 0.4rem;
+  font-size: 1rem; }
+  .btn-close:hover {
+    background-color: #c20000;
+    color: white;
+    border-radius: 0.4rem; }
 
-/* On mouse-over, add a grey background color */
-.radio-btn:hover input ~ .checkmark {
-  background-color: #ccc; }
+.btn-contrib-send {
+  background-color: transparent;
+  color: black;
+  background-color: white;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 400;
+  width: 70px; }
+  .btn-contrib-send:hover {
+    color: white;
+    background-color: #006661;
+    border-radius: 0.4rem;
+    font-weight: 500; }
 
-/* When the radio button is checked, add a blue background */
-.radio-btn input:checked ~ .checkmark {
-  background-color: #2196F3; }
+.dd-contrib {
+  font-size: 1.2rem;
+  color: #666666; }
+  .dd-contrib:hover {
+    color: black; }
+  .dd-contrib:active {
+    background-color: #46C9CC;
+    border-radius: 0.4rem; }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none; }
-
-/* Show the indicator (dot/circle) when checked */
-.radio-btn input:checked ~ .checkmark:after {
-  display: block; }
-
-/* Style the indicator (dot/circle) */
-.radio-btn .checkmark:after {
-  top: 9px;
-  left: 9px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white; }
+.btn-footer {
+  color: white; }
+  .btn-footer:hover {
+    color: #666666; }
