@@ -25,7 +25,7 @@ class Usuarios(models.Model):
     TipoUsuario = models.CharField(max_length = 15, choices = tipo_usuario)
     RFC = models.CharField(max_length = 13)
     Domicilio = models.CharField(max_length = 100)
-    Celular = models.IntegerField()$
+    Celular = models.IntegerField()
     Correo = models.EmailField(max_length = 100)
     Sexo = models.CharField(max_length = 9, choices = sexo)
 
