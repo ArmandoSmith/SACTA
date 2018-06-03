@@ -21,15 +21,15 @@ class Usuarios(models.Model):
     Nombre = models.CharField(max_length = 50)
     ApellidoP = models.CharField(max_length = 50)
     ApellidoM = models.CharField(max_length = 50)
-    Departamento = models.ForeignKey('Departamentos', on_delete = models.CASCADE)
+    Departamento = models.ForeignKey('Departamentos', on_delete = models.CASCADE, blank = True)
     TipoUsuario = models.CharField(max_length = 15, choices = tipo_usuario)
     RFC = models.CharField(max_length = 13)
     Domicilio = models.CharField(max_length = 100)
-    Celular = models.IntegerField()
+    Celular = models.IntegerField()$
     Correo = models.EmailField(max_length = 100)
     Sexo = models.CharField(max_length = 9, choices = sexo)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.Nombre
 
 class Departamentos(models.Model):
@@ -44,10 +44,8 @@ class Departamentos(models.Model):
     }
     ID_Departamento = models.AutoField(primary_key = True)
     Departamento = models.CharField(max_length = 16, choices = departamento)
-    #Gerente:
-    ID_Usuario = models.ForeignKey('Usuarios', on_delete = models.CASCADE)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.Departamento
 
 class Camaras(models.Model):
@@ -56,5 +54,5 @@ class Camaras(models.Model):
     ID_Departamento = models.ForeignKey('Departamentos', on_delete = models.CASCADE)
     Puerto = models.CharField(max_length = 4, default = '0000')
 
-    def __unicode__(self):
+    def __int__(self):
         return self.ID_Camara

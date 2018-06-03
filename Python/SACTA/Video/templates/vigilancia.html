@@ -12,7 +12,7 @@
         </div>
         <div class="dropdown-content" id="myDropdown">
           <label href="#" style="padding: 1rem 1rem">angel.rubio@gmail.com</label>
-          <a href="/loguot/">Cerrar sesión</a>
+          <a href="/logout/">Cerrar sesión</a>
         </div>
       </div>
     </nav>
@@ -50,33 +50,34 @@
       <img src="{% static 'img/logo.svg' %}" style="width:100px;">
     </div>
 {% endblock %}
-  <script>
-    function openSlideMenu(){
-    document.getElementById('side-menu').style.width = '250px';
-    document.getElementById('main').style.marginLeft = '250px';
-    }
-    function closeSlideMenu(){
-    document.getElementById('side-menu').style.width = '0';
-    document.getElementById('main').style.marginLeft = '0';
-    }
+{% block scripts %}
+    <script>
+      function openSlideMenu(){
+      document.getElementById('side-menu').style.width = '250px';
+      document.getElementById('main').style.marginLeft = '250px';
+      }
+      function closeSlideMenu(){
+      document.getElementById('side-menu').style.width = '0';
+      document.getElementById('main').style.marginLeft = '0';
+      }
 
-  </script>
-  <script>
-    function myFunction(){
-    document.getElementById("myDropdown").classList.toggle("show");
-    }
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
+    </script>
+    <script>
+      function myFunction(){
+      document.getElementById("myDropdown").classList.toggle("show");
+      }
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
           }
         }
       }
-    }
-  </script>
-</html>
+    </script>
+{% endblock %}
