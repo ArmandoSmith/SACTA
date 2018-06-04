@@ -12,7 +12,20 @@ def index(request):
     return render(request, 'index.html', {})
 
 def vigilancia(request):
-    return render(request, 'vigilancia.html', {})
+    usuarios = list(Usuarios.objects.all())
+    departamentos = list(Departamentos.objects.all())
+    camaras = list(Camaras.objects.all())
+    
+    formDepartamentos = Departamentos_Form(request.POST or None, request.FILES or None)
+    formCamaras = Camaras_Form(request.POST or None, request.FILES or None)
+    if request.method == "POST":
+        if formDepartamentos.is_valid():
+            formDepartamentos.save()
+    if request.method == "POST":
+        if formCamaras.is_valid():
+            formCamaras.save()
+
+    return render(request, 'vigilancia.html', {"formDepartamentos":formDepartamentos, "formCamaras":formCamaras, "usuarios":usuarios, "departamentos":departamentos, "camaras":camaras})
 
 class SignUp(FormView):
     template_name = 'registrarse.html'

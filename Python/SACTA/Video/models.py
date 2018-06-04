@@ -33,17 +33,8 @@ class Usuarios(models.Model):
         return self.Nombre
 
 class Departamentos(models.Model):
-    departamento = {
-        ('Sisetemas', 'Sistemas'),
-        ('Recursos Humanos', 'Recuros Humanos'),
-        ('Administrativo', 'Administrativo'),
-        ('Gerencia', 'Gerencia'),
-        ('Produccion', 'Produccion'),
-        ('Enfermeria', 'Enfermeria'),
-        ('Finanzas', 'Finanzas'),
-    }
     ID_Departamento = models.AutoField(primary_key = True)
-    Departamento = models.CharField(max_length = 16, choices = departamento)
+    Departamento = models.CharField(max_length = 50)
 
     def __str__(self):
         return self.Departamento

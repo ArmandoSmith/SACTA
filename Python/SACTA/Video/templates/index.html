@@ -19,9 +19,15 @@
           <a class="btn-link" href="#" style="text-decoration:none; margin-top: 2rem">VOIP</a>
         </div>
         <div class="col d-flex align-items-center flex-column">
-          <a href="/vigilancia/">
-            <img src="{% static 'img/surv.svg' %}" style="width: 200px">
-          </a>
+          {% if not request.user.is_authenticated %}
+            <a href="/login/">
+              <img src="{% static 'img/surv.svg' %}" style="width: 200px">
+            </a>
+          {% else %}
+            <a href="/vigilancia/">
+              <img src="{% static 'img/surv.svg' %}" style="width: 200px">
+            </a>
+          {% endif %}
           <a class="btn-link" href="" style="text-decoration:none; margin-top: 2rem">Vigilancia</a>
         </div>
         <div class="col d-flex align-items-center flex-column"><a href="#">

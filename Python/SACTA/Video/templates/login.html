@@ -2,18 +2,24 @@
 {% block title %}login{% endblock %}
 {% load staticfiles %}
 {% block body %}
-    <div class="d-flex align-items-center flex-column login" style="width: 400px; margin: 0px auto; margin-top: 4rem;">
-      <a href="#" style="margin-bottom:1.5rem">
-        <img src="{% static 'img/logo.svg' %}" style="width:100px;">
-      </a>
-      <h3>Iniciar sesión </h3>
-      <form class="d-flex flex-column" action="/index/">
-        <input class="inp" placeholder="Usuario">
-        <input class="inp" type="password" placeholder="Contraseña">
-        <input class="btn-enter" type="submit" value="Entrar">
-      </form>
+{% if form.errors %}
+    <p>Tu usuario y contraseña no coinciden, por favor vuelva a intentarlo:</p>
+{% endif %}
+<div class="d-flex align-items-center flex-column login" style="width: 400px; margin: 0px auto; margin-top: 4rem;">
+  <a href="/index/" style="margin-bottom:1.5rem">
+    <img src="{% static 'img/logo.svg' %}" style="width:100px;">
+  </a>
+  <h3>Iniciar sesión </h3>
+  <form method = "POST">
+    {% csrf_token %}
+    <div class="d-flex flex-column form-group" action="/login/">
+      <input class="inp" name="username" placeholder="Usuario">
+      <input class="inp" name="password" type="password" placeholder="Contraseña">
+      <button class="btn-enter" type="submit">Entrar</button>
     </div>
-    <div class="d-flex align-items-center flex-column login" style="width: 400px; margin: 0px auto; margin-top: 1rem; padding:0.5rem;">
-      <a class="label-link text-right" href="/signup/" style="color: rgb(0, 44, 40);"> Registrarse</a>
-    </div>
+  </form>
+</div>
+<div class="d-flex align-items-center flex-column login" style="width: 400px; margin: 0px auto; margin-top: 1rem; padding:0.5rem;">
+  <a class="label-link text-right" href="/signup/" style="color: rgb(0, 44, 40);">Registrarse</a>
+</div>
 {% endblock %}

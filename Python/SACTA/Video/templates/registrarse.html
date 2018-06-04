@@ -3,26 +3,31 @@
 {% load staticfiles %}
 {% block body %}
     <div class="d-flex align-items-center flex-column login" style="width: 750px; margin: 0px auto; margin-top: 4rem; padding:1rem">
-      <a href="login.html" style="margin-bottom:1.5rem">
+      <a href="/login/" style="margin-bottom:1.5rem">
         <img src="{% static 'img/logo.svg' %}" style="width:50px;">
       </a>
-      <form action="login.html">
+      <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button class="btn-enter text-center" type="submit" style="width:300px;margin-top:2rem" value="Register">Registrarse</button>
+        <!--
         <div class="d-flex flex-column align-items-center">
           <div class="d-flex justify-content-center">
             <div class="text-center d-flex flex-column" style="width:300px;">
-              <input class="inp" placeholder="Usuario">
-              <input class="inp" placeholder="Contraseña">
-              <input class="inp" placeholder="Nombre">
-              <input class="inp" placeholder="Apellido materno">
-              <input class="inp" placeholder="Apellido paterno">
-              <input class="inp" placeholder="Deprtamento">
-              <input class="inp" placeholder="TipoUsuario">
-              <input class="inp" placeholder="RFC">
+              <input class="form-control inp" name="username" placeholder="Usuario">
+              <input class="form-control inp" name="password" placeholder="Contraseña">
+              <input class="form-control inp" name="Nombre" placeholder="Nombre">
+              <input class="form-control inp" name="ApellidoP" placeholder="Apellido paterno">
+              <input class="form-control inp" name="ApellidoM" placeholder="Apellido materno">
+              <input class="form-control inp" name="Departamento" placeholder="Deprtamento">
+              <input class="form-control inp" name="TipoUsuario" placeholder="Tipo de Usuario">
+              <input class="form-control inp" name="RFC" placeholder="RFC">
             </div>
             <div class="text-center d-flex flex-column" style="width:300px;margin-left:3rem;">
-              <input class="inp" placeholder="Direccion de domicilio">
-              <input class="inp" placeholder="Celular">
-              <input class="inp" placeholder="Correo">
+              <input class="form-control inp" name="Domicilio" placeholder="Direccion de domicilio">
+              <input class="form-control inp" name="Celular" placeholder="Celular">
+              <input class="form-control inp" name="Correo" placeholder="Correo">
+              <input class="form-control inp" name="Sexo" placeholder="Sexo">
               <label class="text-left" style="margin-top:1rem">Sexo</label>
               <div class="d-flex flex-column" style="padding:0rem 5rem">
                 <div class="custom-control custom-radio" style="width:100px">
@@ -38,8 +43,7 @@
               <input type="date" name="bday">
             </div>
           </div>
-          <input class="btn-enter text-center" type="submit" value="Registrarse" style="width:300px;margin-top:2rem">
-        </div>
+        </div> -->
       </form>
     </div>
 {% endblock %}

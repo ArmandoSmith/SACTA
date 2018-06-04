@@ -2,160 +2,197 @@
 {% block title %}vigilancia{% endblock %}
 {% load staticfiles %}
 {% block body %}
-    <nav class="navbar nv justify-content-between"><a href="login.html"><img src="img/logo.svg" style="width:30px;"></a>
-      <div class="d-flex align-items-center">
-        <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-departamento">Departamento              <i class="fas fa-plus-circle"></i></button>
-        <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-camara">Camara  <span class="fas fa-plus-circle"></span></button>
-        <div class="dropdown" style="height:40px">     
-          <div class="circular--landscape dropdown-toggle dropbtn" type="button" data-toggle="dropdown" onclick="myFunction()"><img src="img/ava.png"></div>
-          <div class="dropdown-content" id="myDropdown">
-            <label href="#" style="padding: 1rem 1rem">angel.rubio@gmail.com</label><a href="#">Cerrar sesión          </a>
-          </div>
+  <!--
+  Condición para que no puedan acceder al archivo sin logearse.
+  Ya no se utiliza el login.html
+  -->
+  {% if not request.user.is_authenticated %}
+  <script>
+    window.location.replace("http://localhost:8000/login");
+  </script>
+  {% else %}
+  <nav class="navbar nv justify-content-between">
+    <a href="/index/">
+      <img src="{% static 'img/logo.svg' %}" style="width:30px;">
+    </a>
+    <div class="d-flex align-items-center">
+      <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-departamento">Departamento
+        <i class="fas fa-plus-circle"></i>
+      </button>
+      <button class="btn-nav" href="vigilancia.html" style="margin-right:1rem" data-toggle="modal" data-target="#pop-camara">Camara
+        <span class="fas fa-plus-circle"></span>
+      </button>
+      <div class="dropdown" style="height:40px">
+        <div class="circular--landscape dropdown-toggle dropbtn" type="button" data-toggle="dropdown" onclick="myFunction()">
+          <img src="{% static 'img/ava.png' %}"></div>
+        <div class="dropdown-content" id="myDropdown">
+          <label href="#" style="padding: 1rem 1rem">angel.rubio@gmail.com</label>
+          <a href="/logout/">Cerrar sesión</a>
         </div>
       </div>
-    </nav>
-    <!--Pop-Up Departamento-->
-    <div class="modal fade" id="pop-departamento" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content" id="mod-content">
-          <form>
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Agregar departamento </h5>
-              <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close"> <i class="fa fa-times" aria-hidden="true">             </i></button>
-            </div>
-            <div class="modal-body px-4">
-              <p class="text-justify">Selecciona el departamento a agregar
-                <div class="form-group">                                 
-                  <select class="form-control" id="departamento">
-                    <option>Sistemas</option>
-                    <option>RH</option>
-                    <option>Luzelenita</option>
-                    <option>Erasmiamor</option>
-                    <option>Papiniaga</option>
-                  </select>
-                </div>
-              </p>
-              <div class="d-flex justify-content-end" style="margin:1rem 0px">
-                <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
-                <button class="btn btn-contrib-send" type="button">Enviar  </button>
+    </div>
+  </nav>
+  <!--Pop-Up Departamento-->
+  <div class="modal fade" id="pop-departamento" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content" id="mod-content">
+        <form method="POST">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar departamento </h5>
+            <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body px-4">
+            <p class="text-justify">Selecciona el departamento a agregar
+              <div class="form-group">
+                {% csrf_token %}
+                {{formDepartamentos.as_p}}
+                <!--<select class="form-control" id="departamento">
+                  <option>Sistemas</option>
+                  <option>RH</option>
+                  <option>Luzelenita</option>
+                  <option>Erasmiamor</option>
+                  <option>Papiniaga</option>
+                </select>-->
               </div>
+            </p>
+            <div class="d-flex justify-content-end" style="margin:1rem 0px">
+              <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
+              <button class="btn btn-contrib-send" type="submit">Enviar</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
-    <!--Pop-Up Camaras-->
-    <div class="modal fade" id="pop-camara" tabindex="-1" role="dialog">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content" id="mod-content">
-          <form>
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Agregar camara </h5>
-              <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close"> <i class="fa fa-times" aria-hidden="true">             </i></button>
-            </div>
-            <div class="modal-body px-4">
-              <p class="text-justify">Llene el siguiente formulario para agregar una camara              
-                <div class="form-group">      
-                  <label for="#id-usuario">ID de Usuario        </label>
-                  <select class="form-control" id="id-usuario"> 
-                    <option>E3 2018</option>
-                    <option>Rocket League</option>
-                    <option>Battlefield V</option>
-                    <option>Dishonored</option>
-                    <option>Darksiders</option>
-                  </select>
-                  <div class="form-group">              </div>
-                  <label for="#id-departamento">ID de departamento</label>
-                  <select class="form-control" id="id-departamento">
-                    <option>E3 2018</option>
-                    <option>Rocket League</option>
-                    <option>Battlefield V</option>
-                    <option>Dishonored</option>
-                    <option>Darksiders</option>
-                  </select>
-                  <div class="form-group">   </div>
-                  <label for="#puerto">Puerto</label>
-                  <select class="form-control" id="puerto">
-                    <option>E3 2018</option>
-                    <option>Rocket League</option>
-                    <option>Battlefield V</option>
-                    <option>Dishonored</option>
-                    <option>Darksiders</option>
-                  </select>
-                </div>
-              </p>
-              <div class="d-flex justify-content-end" style="margin:1rem 0px">
-                <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
-                <button class="btn btn-contrib-send" type="button">Enviar  </button>
+  </div>
+  <!--Pop-Up Camaras-->
+  <div class="modal fade" id="pop-camara" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content" id="mod-content">
+        <form method="POST">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Agregar camara</h5>
+            <button class="close x-close" type="button" data-dismiss="modal" aria-label="Close">
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="modal-body px-4">
+            <p class="text-justify">Llene el siguiente formulario para agregar una camara
+              <div class="form-group">
+                {% csrf_token %}
+                {{formCamaras.as_p}}
               </div>
+            </p>
+            <div class="d-flex justify-content-end" style="margin:1rem 0px">
+              <button class="btn btn-close" type="button" data-dismiss="modal" style="margin-right:0.75rem">Cerrar</button>
+              <button class="btn btn-contrib-send" type="submit">Enviar </button>
             </div>
-          </form>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="side-nav d-flex flex-column" id="side-menu">
+    <!--De stackoverflow-->
+    <!-- Tabs BS-->
+    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist" style="padding-top:1rem">
+      <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Departamentos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Usuarios</a>
+      </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="d-flex flex-column" style="padding-left:2.5rem; padding-top:1rem">
+          {% for c in camaras %}
+            <label>{{c.ID_Departamento}}</label>
+            {% for c2 in camaras %}
+              {% if c.ID_Departamento == c2.ID_Departamento %}
+                <div class="d-flex flex-column" style="padding-left:2.5rem">
+                  <label>{{c2.Puerto}}</label>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="d-flex flex-column" style="padding-left:2.5rem; padding-top:1rem">
+          {% for c in camaras %}
+            <label>{{c.ID_Usuario}}</label>
+            <div class="d-flex flex-column" style="padding-left:2.5rem">
+              {% for c2 in camaras %}
+                {% if c.ID_Usuario == c2.ID_Usuario %}
+                  <label>{{c2.Puerto}}</label>
+                {% endif %}
+              {% endfor %}
+            </div>
+          {% endfor %}
         </div>
       </div>
     </div>
-    
-    <div class="side-nav d-flex flex-column" id="side-menu">
-      <!--De stackoverflow-->
-      <!-- Tabs BS-->
-      <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist" style="padding-top:1rem">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Departamentos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Usuarios</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <div class="d-flex flex-column" style="padding-left:2.5rem; padding-top:1rem">
-            <label>Departamento 1</label>
-            <label>Departamento 1</label>
-            <label>Departamento 1</label>
-            <label>Departamento 1</label>
-          </div>
-        </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="d-flex flex-column" style="padding-left:2.5rem; padding-top:1rem">
-            <label>Usuario 1</label>
-            <label>Usuario 1</label>
-            <label>Usuario 1</label>
-            <label>Usuario 1</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center align-items-center" id="main">
-      <img src="{% static 'img/logo.svg' %}" style="width:100px;">
-    </div>
+  </div>
+  <div class="d-flex justify-content-center align-items-center" id="main">
+    <video id='video' width="400" height="300"></video>
+    <canvas id="canvas" width="0" height="0"><canvas>
+    <!--<img src="{% static 'img/logo.svg' %}" style="width:100px;">-->
+  </div>
+{% endif %}
 {% endblock %}
 {% block scripts %}
-    <script>
-      function openSlideMenu(){
-      document.getElementById('side-menu').style.width = '250px';
-      document.getElementById('main').style.marginLeft = '250px';
-      }
-      function closeSlideMenu(){
-      document.getElementById('side-menu').style.width = '0';
-      document.getElementById('main').style.marginLeft = '0';
-      }
+<script>
+(function() {
+  var canvas = document.getElementById('canvas'),
+      context = canvas.getContext('2d'),
+      video = document.getElementById('video'),
+      vendorUrl = window.URL || window.webkitURL;
 
-    </script>
-    <script>
-      function myFunction(){
-      document.getElementById("myDropdown").classList.toggle("show");
-      }
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
+  navigator.getMedia = navigator.getUserMedia ||
+                       navigator.webKitGetUserMedia ||
+                       navigator.mozGetUserMEdia ||
+                       navigator.msGetUserMEdia;
+  navigator.getMedia({
+    video: true,
+    audio: false
+  }, function(stream){
+    video.src = vendorUrl.createObjectURL(stream);
+    video.play();
+  }, function(error){
+    // A ocurrido un error.
+    // error.code
+  });
+})();
+</script>
+<script>
+  function openSlideMenu(){
+  document.getElementById('side-menu').style.width = '250px';
+  document.getElementById('main').style.marginLeft = '250px';
+  }
+  function closeSlideMenu(){
+  document.getElementById('side-menu').style.width = '0';
+  document.getElementById('main').style.marginLeft = '0';
+  }
+</script>
+<script>
+  function myFunction(){
+  document.getElementById("myDropdown").classList.toggle("show");
+  }
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
         }
       }
-    </script>
+    }
+  }
+</script>
+
 {% endblock %}
